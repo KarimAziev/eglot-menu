@@ -12,8 +12,6 @@ Transient menu for Eglot.
   - [[#with-use-package-and-straightel][With use-package and straight.el]]
   - [[#manual-installation][Manual installation]]
 - [[#usage][Usage]]
-  - [[#transient][Transient]]
-  - [[#commands][Commands]]
 #+END_QUOTE
 
 * Requirements
@@ -53,12 +51,4 @@ Add the downloaded directory to the load path:
 #+end_src
 
 * Usage
-
-** Transient
-
-**** ~eglot-menu-transient~
-=a= command dispatcher for various Eglot actions, find commands, and configurations.
-** Commands
-
-**** ~eglot-menu-reconnect~
-Reconnect to the Eglot server and reopen the buffer at the same position.
+Run ~M-x eglot-menu-transient~ to open a command dispatcher for various Eglot actions, find commands, and configurations.
