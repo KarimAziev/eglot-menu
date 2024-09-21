@@ -1,0 +1,64 @@
+#+OPTIONS: ^:nil tags:nil num:nil
+
+* About
+
+Transient menu for Eglot.
+
+* Table of Contents                                       :TOC_2_gh:QUOTE:
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#requirements][Requirements]]
+- [[#installation][Installation]]
+  - [[#with-use-package-and-straightel][With use-package and straight.el]]
+  - [[#manual-installation][Manual installation]]
+- [[#usage][Usage]]
+  - [[#transient][Transient]]
+  - [[#commands][Commands]]
+#+END_QUOTE
+
+* Requirements
+
+| Name        | Version |
+|-------------+---------|
+| Emacs       |    29.1 |
+| ~transient~ |   0.7.3 |
+| ~eglot~     |    1.17 |
+
+
+* Installation
+
+** With use-package and straight.el
+#+begin_src elisp :eval no
+(use-package eglot-menu
+  :straight (eglot-menu
+             :repo "KarimAziev/eglot-menu"
+             :type git
+             :host github)
+  :commands (eglot-menu-reconnect))
+#+end_src
+
+** Manual installation
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/eglot-menu/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/eglot-menu.git ~/.emacs.d/eglot-menu/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+(add-to-list 'load-path "~/.emacs.d/eglot-menu/")
+(require 'eglot-menu)
+#+end_src
+
+* Usage
+
+** Transient
+
+**** ~eglot-menu-transient~
+=a= command dispatcher for various Eglot actions, find commands, and configurations.
+** Commands
+
+**** ~eglot-menu-reconnect~
+Reconnect to the Eglot server and reopen the buffer at the same position.
